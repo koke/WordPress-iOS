@@ -1008,7 +1008,7 @@ NSLog(@"%@", self.sectionInfoArray);
                     [webViewController setUrl:[NSURL URLWithString:blogURL]];
                     if( [blog isPrivate] ) {
                         [webViewController setUsername:blog.username];
-                        [webViewController setPassword:[blog fetchPassword]];
+                        [webViewController setPassword:blog.password];
                         [webViewController setWpLoginURL:[NSURL URLWithString:blog.loginUrl]];
                     }
                     [self.panelNavigationController setDetailViewController:webViewController closingSidebar:closingSidebar];
@@ -1034,7 +1034,7 @@ NSLog(@"%@", self.sectionInfoArray);
                     WPWebViewController *webViewController = [[WPWebViewController alloc] init];
                     [webViewController setUrl:[NSURL URLWithString:dashboardURL]];
                     [webViewController setUsername:blog.username];
-                    [webViewController setPassword:[blog fetchPassword]];
+                    [webViewController setPassword:blog.password];
                     [webViewController setWpLoginURL:[NSURL URLWithString:blog.loginUrl]];
                     [self.panelNavigationController setDetailViewController:webViewController closingSidebar:closingSidebar];
                 }
