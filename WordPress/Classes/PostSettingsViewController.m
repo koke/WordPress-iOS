@@ -6,6 +6,7 @@
 #import "NSString+Helpers.h"
 #import "EditPostViewController_Internal.h"
 #import "Post.h"
+#import "PostSettingsFeaturedImagePreviewViewController.h"
 
 #define kPasswordFooterSectionHeight         68.0f
 #define kResizePhotoSettingSectionHeight     60.0f
@@ -292,6 +293,13 @@
     [tableView reloadData];
 }
 
+- (void)removeFeaturedImage {
+    [featuredImageTableViewCell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+    self.post.post_thumbnail = nil;
+    [postDetailViewController refreshButtons];
+    [tableView reloadData];
+}
+
 #pragma mark -
 #pragma mark TextField Delegate Methods
 
@@ -460,6 +468,7 @@
                                 }
                             }
                         }
+                        featuredImageTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                         return featuredImageTableViewCell;
                         break;
                     case 1: {
@@ -677,8 +686,15 @@
                 switch (indexPath.row) {
                     case 0:
                         if (!self.post.post_thumbnail) {
-                            
                             [self.postDetailViewController.postMediaViewController showPhotoPickerActionSheet:cell fromRect:cell.frame isFeaturedImage:YES];
+                        } else {
+                            // Display a preview for the already uploaded featured image
+                            void(^removeCompletion)(void) = ^{
+                                [self removeFeaturedImage];
+                            };
+                            PostSettingsFeaturedImagePreviewViewController *viewController = [[PostSettingsFeaturedImagePreviewViewController alloc] initWithImage:featuredImageView.image
+                                                                                                                                                  removeCompletion:removeCompletion];
+                            [self.postDetailViewController.navigationController pushViewController:viewController animated:YES];
                         }
                         break;
                     case 1:
@@ -785,10 +801,7 @@
 #pragma mark UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        [featuredImageTableViewCell setSelectionStyle:UITableViewCellSelectionStyleBlue];
-        self.post.post_thumbnail = nil;
-        [postDetailViewController refreshButtons];
-        [tableView reloadData];
+        [self removeFeaturedImage];
     }
     
 }
