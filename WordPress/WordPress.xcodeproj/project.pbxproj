@@ -726,6 +726,7 @@
 		E13FA0F7134C849D007DCDD0 /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E13FA0F5134C849D007DCDD0 /* downArrow.png */; };
 		E13FA0F8134C849D007DCDD0 /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E13FA0F6134C849D007DCDD0 /* downArrow@2x.png */; };
 		E13FA0FB134C8DDC007DCDD0 /* BlogSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E13FA0FA134C8DDC007DCDD0 /* BlogSelectorViewController.m */; };
+		E143C40917BCEB7700392273 /* WPWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E143C40817BCEB7700392273 /* WPWebBrowserViewController.m */; };
 		E1472B9713EFF9FF00987A40 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = E1472B9313EFF9FF00987A40 /* left.png */; };
 		E1472B9813EFF9FF00987A40 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1472B9413EFF9FF00987A40 /* left@2x.png */; };
 		E1472B9913EFF9FF00987A40 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = E1472B9513EFF9FF00987A40 /* right.png */; };
@@ -1775,6 +1776,8 @@
 		E13FA0F6134C849D007DCDD0 /* downArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downArrow@2x.png"; path = "Resources/Images/downArrow@2x.png"; sourceTree = "<group>"; };
 		E13FA0F9134C8DDC007DCDD0 /* BlogSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSelectorViewController.h; sourceTree = "<group>"; };
 		E13FA0FA134C8DDC007DCDD0 /* BlogSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSelectorViewController.m; sourceTree = "<group>"; };
+		E143C40717BCEB7700392273 /* WPWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPWebBrowserViewController.h; sourceTree = "<group>"; };
+		E143C40817BCEB7700392273 /* WPWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPWebBrowserViewController.m; sourceTree = "<group>"; };
 		E1457202135EC85700C7BAD2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E1472B9313EFF9FF00987A40 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left.png; path = Resources/Images/left.png; sourceTree = "<group>"; };
 		E1472B9413EFF9FF00987A40 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "left@2x.png"; path = "Resources/Images/left@2x.png"; sourceTree = "<group>"; };
@@ -3171,6 +3174,8 @@
 				E1921F5917733C3E000F4079 /* WPImageSource.m */,
 				E1E4CE091773C59B00430844 /* WPAvatarSource.h */,
 				E1E4CE0A1773C59B00430844 /* WPAvatarSource.m */,
+				E143C40717BCEB7700392273 /* WPWebBrowserViewController.h */,
+				E143C40817BCEB7700392273 /* WPWebBrowserViewController.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -4677,6 +4682,7 @@
 				851734431798C64700A30E27 /* NSURL+Util.m in Sources */,
 				E1D95EB817A28F5E00A3E9F3 /* WPActivityDefaults.m in Sources */,
 				E1ECF7DF17A7CEE600535A05 /* ViewAdminButton.m in Sources */,
+				E143C40917BCEB7700392273 /* WPWebBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
